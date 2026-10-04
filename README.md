@@ -1,11 +1,11 @@
 # Learn Data Science
 
-Notes and small experiments from my data science learning journey.
+Notes of experiments from my data science learning journey.
 
 ## Topics
 
-- [Poetry](./poetry/README.md) — Python dependencies and virtual environments.
-- Add a folder such as `docker/` when starting notes on another topic.
+- [1 Poetry](./poetry/README.md) — Python dependencies and virtual environments management tool.
+- Git.
 
 ## Project setup
 
@@ -15,8 +15,4 @@ directory; topic folders are for notes, not separate Python environments.
 
 ```powershell
 poetry install
-poetry run python --version
 ```
-
-Add topic-specific notes to that topic's folder. Keep reusable code, exercises,
-and experiments in appropriately named folders as the repository grows.
