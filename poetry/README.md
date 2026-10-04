@@ -1,140 +1,37 @@
-# Notes: Learning Poetry for Production-Ready Data Science
+# Poetry
 
-## Overview
+Notes on using Poetry to manage the shared Python project in this repository.
 
-Poetry is a dependency and environment management tool that helps keep Python projects organized, reproducible, and easy to deploy in data science workflows.
+## What Poetry does here
 
----
+The project configuration lives at the repository root in `pyproject.toml`,
+with exact dependency versions recorded in `poetry.lock`. This folder is for
+Poetry-specific learning notes; it is not a separate Poetry project.
 
-## 1. Install Poetry
+Run the following commands from the repository root:
 
-```bash
-pip install poetry
-poetry --version
-```
-
-If you want Poetry to use a specific Python interpreter:
-
-```bash
-poetry env use "C:\Users\imaka\AppData\Local\Programs\Python\Python312\python.exe"
-```
-
-To keep the virtual environment inside the project folder:
-
-```bash
-poetry config virtualenvs.in-project true
-```
-
-This stores the virtual environment in a local `.venv` folder within the project directory.
-
----
-
-## 2. Create a New Project or Initialize an Existing One
-
-### Create a new project
-
-```bash
-poetry new learn_ds
-```
-
-### Initialize an existing project
-
-```bash
-poetry init
-```
-
-### Install dependencies for a cloned repository
-
-```bash
+```powershell
 poetry install
-```
-
-### Update dependencies when the project changes
-
-```bash
-poetry update
-```
-
----
-
-## 3. Add and Remove Packages
-
-### Add common data science libraries
-
-```bash
 poetry add pandas numpy matplotlib scikit-learn
+poetry run python --version
 ```
 
-### Remove a package
+To use a particular Python interpreter:
 
-```bash
-poetry remove pandas
+```powershell
+poetry env use "C:\Path\To\Python\python.exe"
 ```
 
----
+To keep the virtual environment in the repository, enable
+`virtualenvs.in-project` in Poetry's configuration before installing. The
+repository ignores `.venv/`, so the environment itself is not committed.
 
-## 4. Important Poetry Files
+## Key files
 
-Poetry creates and manages a few core files:
+- `pyproject.toml` — project metadata and dependency requirements.
+- `poetry.lock` — locked dependency versions.
+- `.venv/` — local environment created by Poetry; do not commit it.
 
-- `pyproject.toml`: Project metadata and dependency requirements.
-- `poetry.lock`: Locked versions of dependencies to ensure consistent installs across machines.
-- `.venv`: The isolated virtual environment where the dependencies are installed. Make sure to put this file in gitignore
-
-Poetry helps make environments reproducible and avoid version conflicts.
-
----
-
-## 5. Run Scripts in the Poetry Environment
-
-Use the environment created by Poetry:
-
-```bash
-poetry run python script.py
-```
-
-This ensures the script runs with the correct dependencies from the project environment.
-
----
-
-## 6. Common Workflow
-
-```bash
-poetry new learn_ds
-cd learn_ds
-poetry add pandas numpy matplotlib scikit-learn
-poetry run python main.py
-```
-
----
-
-## 7. Docker Example
-
-```dockerfile
-FROM python:3.11-slim
-
-WORKDIR /app
-
-COPY pyproject.toml poetry.lock ./
-
-RUN pip install poetry
-RUN poetry install --only main
-
-COPY src ./src
-
-CMD ["poetry", "run", "python", "src/customer_churn/main.py"]
-```
-
-This is useful when you want the project to run in a consistent, portable environment using Docker.
-
----
-
-## Quick Summary
-
-- Poetry manages dependencies and virtual environments.
-- `pyproject.toml` defines project needs.
-- `poetry.lock` locks exact versions.
-- Use `poetry install` to set up a project.
-- Use `poetry run` to execute scripts inside the project environment.
-
-
+When adding another topic, create a sibling folder such as `docker/` for its
+notes. Keep this shared project configuration at the repository root unless a
+topic genuinely needs an independent Python project.

@@ -1,4 +1,5 @@
-.venvanode_modules/
+.venv/
+node_modules/
 .env
 .env.local
 dist/

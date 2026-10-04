@@ -1,5 +1,5 @@
 [project]
-name = "lern-ds"
+name = "learn-ds"
 version = "0.1.0"
 description = ""
 authors = [
@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "lern_ds", from = "src"}]
+packages = [{include = "learn_ds", from = "src"}]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
