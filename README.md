@@ -12,4 +12,5 @@ Notes of experiments from my data science learning journey.
 The `pyproject.toml` and `poetry.lock` files are experiments meta deta and dependencies used in the project through out
 ```powershell
 poetry install
-``` help to clone the repositry dependencies.
+``` 
+help to clone the repositry dependencies.
