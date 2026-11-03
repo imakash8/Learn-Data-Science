@@ -1,0 +1,26 @@
+# Python 3.12. Versions used to verify this teaching project.
+# The first seven packages are the tools we discuss in the walkthrough.
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.8.0
+joblib==1.5.3
+fastapi==0.115.12
+pydantic==2.14.1
+uvicorn==0.34.2
+
+# Supporting dependencies, also pinned for consistent training and serving.
+annotated-types==0.8.0
+anyio==4.16.0
+click==8.5.0
+h11==0.16.0
+idna==3.19
+pydantic-core==2.50.1
+python-dateutil==2.9.0.post0
+pytz==2026.5
+scipy==1.17.0
+six==1.17.0
+starlette==0.46.2
+threadpoolctl==3.6.0
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+tzdata==2026.5

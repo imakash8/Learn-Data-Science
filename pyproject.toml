@@ -1,22 +1,17 @@
 [project]
 name = "learn-ds"
 version = "0.1.0"
-description = ""
+description = "Data science learning experiments and notes"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    { name = "Akash Kumar" }
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "pandas (>=3.0.6,<4.0.0)",
-    "numpy (>=2.5.3,<3.0.0)",
-    "matplotlib (>=3.11.2,<4.0.0)",
-    "scikit-learn (>=1.9.1,<2.0.0)"
+    "pandas>=3.0.6,<4.0.0",
+    "numpy>=2.5.3,<3.0.0",
+    "matplotlib>=3.11.2,<4.0.0",
+    "scikit-learn>=1.9.1,<2.0.0",
+    "fastapi>=0.162.0",
+    "pytest>=9.2.0",
 ]
-
-[tool.poetry]
-packages = [{include = "learn_ds", from = "src"}]
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
