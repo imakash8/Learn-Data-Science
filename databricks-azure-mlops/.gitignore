@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local datasets and generated artifacts
+data/
+artifacts/
+mlruns/
+mlartifacts/
+
+# Credentials and environment configuration
+.env
+.env.*
+!.env.example
+.databrickscfg
+
+# Generated Databricks deployment files
+.databricks/
