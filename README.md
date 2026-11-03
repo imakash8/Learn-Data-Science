@@ -1,16 +1,29 @@
 # Learn Data Science
 
-Notes of experiments from my data science learning journey.
+Notes and experiments from my data science learning journey.
 
 ## Topics
 
-- 1. [Poetry](./poetry/README.md) — Python dependencies and virtual environments management tool.
-- 2. Git.
+1. [Poetry](./poetry/README.md) — Python dependency and virtual environment management.
+2. [UV](./uv/README.md) — Fast Python package and project management.
+3. Git.
 
-## Project setup
+## Project Setup
 
-The `pyproject.toml` and `poetry.lock` files are experiments meta deta and dependencies used in the project through out
+The `pyproject.toml` and lock files contain project metadata and dependency information.
+
+### Using Poetry
+
 ```powershell
 poetry install
-``` 
-help to clone the repositry dependencies.
+```
+
+### Using UV
+
+```powershell
+uv sync
+```
+
+These commands install the project dependencies after cloning the repository.
+
+**Note:** Use the package manager corresponding to the project's lock file (`poetry.lock` for Poetry or `uv.lock` for UV).
